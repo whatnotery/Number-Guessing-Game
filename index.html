@@ -5,22 +5,46 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Guess the number!</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+            rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <section class="section is-medium"></section>
         <section class="section is-small"> <div class="columns">
-            <div class="column"></div>
-            <div class="column is-one-third has-text-centered">
-                <label for="number"><h1 class="title mb-5">Enter a max number</h1></label>
-                <input class="input is-medium mb-5	"  type="number" id="number" name="number" required>
-                <br>
-                <button class="button is-rounded is-info" id="button">Submit</button>
-                <button class="button is-rounded is-danger" id="reset">Reset</button>
-            </div>
-            <div class="column"></div>
-        </div></section>
+                <div class="column"></div>
+                <div class="column is-one-third has-text-centered">
+                    <div class="card">
+                        <div class="card-content">
+                            <label for="number"><h1 class="title mb-5">Enter a
+                                    max number.</h1></label>
+                            <input class="input is-medium mb-5"type="number"
+                                id="number" name="number" required>
+                            <br>
+                        </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-item">
+                                <span>
+                                    <button class="button is-rounded is-inverted
+                                        is-info" id="button">Submit</button>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    <button class="button is-rounded is-inverted
+                                        is-danger" id="reset">Reset</button>
+                                </span>
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column"></div>
+            </div></section>
         <section class="section is-medium"></section>
         <script src="script.js"></script>
     </body>
