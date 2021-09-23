@@ -1,17 +1,23 @@
 const input = document.querySelector('#number');
 const button = document.querySelector('#button');
 const h1 = document.querySelector('h1');
+let maxNum = 0
+let num = 0
+button.addEventListener('click', function (e) {
+    e.preventDefault
+    if (num === 0) {
+        let num = input.value;
+        maxNum = num
+        h1.innerHTML = `Guess a number between 1 and ${maxNum}`;
+    } else if (maxNum !== 0) {
+        Const = targNum = Math.floor(Math.random() * maxNum) + 1;
+        let attempts = 1;
+        while (input.value !== targNum) {
+            attempts++;
+            if (input.value > targNum) {
+                h1.innerHTML = 'Too High, Guess again';
+            } else { h1.innerHTML = 'Too Low, Guess again';}
+    }
+}})
 
-
-    button.addEventListener('click', function (e){
-        e.preventDefault
-        let maxNum = input.value;
-        h1.innerHTML = `Guess a number between 1 and ${maxNum}`;   
-})
-
-
-/* want to expand the logic so that after the maxNum variable is set it 
-compares any future input.value against maxNum on button clicks and then 
-modifies the h1.innerHTML to say too high or too low. after the correct 
-guess is made I want it to say how many guesses it took */ 
 
