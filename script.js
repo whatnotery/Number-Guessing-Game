@@ -11,7 +11,7 @@ let gameOver = false;
 button.addEventListener('click', function (e) {
     e.preventDefault;
     if (buttonPress === 0) {
-        let maxNum = input.value;
+        maxNum = input.value;
         targNum = Math.floor(Math.random() * maxNum) + 1;
         h1.innerHTML = `Guess a number <br> between 1 and ${maxNum}`;
         button.innerHTML = 'Guess';
@@ -20,9 +20,13 @@ button.addEventListener('click', function (e) {
     } else if (buttonPress >= 1 && !gameOver) {
         buttonPress++;
         if (parseInt(input.value) > targNum) {
-            h1.innerHTML = 'Too High, Guess again';
-            input.value = '';
-
+            if (parseInt(input.value) > maxNum) {
+                h1.innerHTML = `Number is below ${maxNum}`;
+                input.value = '';
+            } else {
+                h1.innerHTML = 'Too High, Guess again';
+                input.value = '';
+            }
         } else if (parseInt(input.value) < targNum) {
             h1.innerHTML = 'Too Low, Guess again';
             input.value = '';
@@ -30,11 +34,11 @@ button.addEventListener('click', function (e) {
             gameOver = true;
             button.disabled = true;
             if (buttonPress === 2) {
-            h1.innerHTML = `You got it! <br> It took you ${buttonPress -1} guess.`;
-        } else {
-            h1.innerHTML = `You got it! <br> It took you ${buttonPress -1} guesses.`;
-        }
-            
+                h1.innerHTML = `You got it in ${buttonPress - 1} guess.`;
+            } else {
+                h1.innerHTML = `You got it in ${buttonPress - 1} guesses.`;
+            }
+
         }
     }
 })
