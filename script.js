@@ -8,7 +8,7 @@ let buttonPress = 0;
 let gameOver = false;
 
 
-button.addEventListener('click', function (e) {
+button.addEventListener('click', function(e) {
     e.preventDefault;
     if (buttonPress === 0) {
         maxNum = input.value;
@@ -42,6 +42,16 @@ button.addEventListener('click', function (e) {
         }
     }
 })
+
+
+window.addEventListener('keydown', function (e) {
+    e.preventDefault;
+    if (e.key === 'Enter') { 
+        eventClick = new Event('click')
+        button.dispatchEvent(eventClick);
+}});
+
+
 
 reset.addEventListener('click', function () {
     maxNum = 0;
