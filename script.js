@@ -8,9 +8,9 @@ let buttonPress = 0;
 let gameOver = false;
 
 
-button.addEventListener('click', function(e) {
+button.addEventListener('click', function (e) {
     e.preventDefault;
-    if (buttonPress === 0) {
+    if (buttonPress === 0 && input.value) {
         maxNum = input.value;
         targNum = Math.floor(Math.random() * maxNum) + 1;
         h1.innerHTML = `Guess a number between 1 and ${maxNum}.`;
@@ -43,16 +43,6 @@ button.addEventListener('click', function(e) {
     }
 })
 
-
-window.addEventListener('keydown', function (e) {
-    e.preventDefault;
-    if (e.key === 'Enter') { 
-        eventClick = new Event('click')
-        button.dispatchEvent(eventClick);
-}});
-
-
-
 reset.addEventListener('click', function () {
     maxNum = 0;
     targNum = 0;
@@ -62,5 +52,17 @@ reset.addEventListener('click', function () {
     gameOver = false;
     button.innerHTML = 'Submit';
     h1.innerHTML = 'Enter a max number.';
+});
+
+window.addEventListener('keydown', function (e) {
+    e.preventDefault;
+    eventClick = new Event('click')
+    if (e.key === 'Enter') {
+        if (gameOver === false) {
+            button.dispatchEvent(eventClick);
+        } else if (gameOver === true) {
+            reset.dispatchEvent(eventClick);
+        }
+    }
 });
 
