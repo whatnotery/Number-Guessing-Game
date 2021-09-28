@@ -23,8 +23,8 @@
                         <div class="card-content">
                             <label for="number"><h1 class="title mb-5">Enter a
                                     max number.</h1></label>
-                            <input class="input is-medium mb-5"type="number"
-                                id="number" name="number" required>
+                            <input class="input is-medium mb-5" min="1" type="number"
+                                id="number" name="number" oninput="validity.valid||(value='');">
                             <br>
                         </div>
                         <footer class="card-footer">
